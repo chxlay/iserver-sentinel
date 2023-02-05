@@ -1,6 +1,7 @@
 # Jedis 自定义相关配置
 sentinel:
   redis:
+    # Redis 连接地址（我使用的是环境变量 和 hosts 文件 动态读取）
     host: ${REDIS_HOST:iserver-redis}
     # 端口，默认6379
     port: 6379
@@ -11,7 +12,7 @@ sentinel:
     # 读取超时，默认timeout
     soTimeout: 2000
     # 密码
-    password: jibLy7oMPIg6Dn0NaEAV8ZOf
+    password: your_redis_password
     # 数据库序号，默认0
     database: 15
     # 客户端名称

@@ -35,7 +35,7 @@ spring:
   application:
     name: ${@artifactId@:iserver-sentinel}
 
-  # 引入Redis配置
+  # 引入Redis配置独立配置 /resource/application-redis.yml
   profiles:
     include: redis
 
@@ -64,8 +64,9 @@ logging:
     file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
 
 auth:
+  # sentinel UI管理台登录的账号和密码，默认账号和密码都是 sentinel 
   username: iserver
-  password: asia8888
+  password: your_sentinel_password
   filter:
     exclude-urls: /,/auth/login,/auth/logout,/registry/machine,/version,/actuator/**,/details
     exclude-url-suffixes: htm,html,js,css,map,ico,ttf,woff,png
